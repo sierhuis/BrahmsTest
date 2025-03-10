@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE AGENT SYSTEM "file:////Users/sierhum/Applications/AgentEnvironment/DTD/agent.dtd"> 
+<!-- Generated at Sun Mar 09 20:33:07 PDT 2025 -->
+
+<AGENT name="MyAgent" serializable="false" display="MyAgent">
+	<MEMBEROF ref="brahms.base.BaseGroup" />
+	<MEMBEROF ref="brahms.base.SystemGroup" />
+	<ATTRIBUTES>
+		<ATTRIBUTE name="MyAgent.name" display="name" scope="public" type="string"/>
+	</ATTRIBUTES>
+	<BELIEFS>
+		<BELIEF>
+			<OAV lObjRef="current" lObjType="Current" attRef="MyAgent.name" evalOp="eq" value="MyAgent" valueType="string"/>
+		</BELIEF>
+	</BELIEFS>
+	<WORKFRAMES>
+		<WORKFRAME name="MyAgent.wf_PrintName" display="wf_PrintName" wftype="1">
+			<VARIABLES>
+				<VARIABLE name="nm" display="nm" quantification="forone" type="string"/>
+			</VARIABLES>
+			<WHEN>
+				<PRECONDITION modifier="knownval">
+					<CONDITION>
+						<VALUECOMPARISON relation="eq">
+							<EXPRESSION>
+								<OPERAND type="OA" objType="current" objRef="current" attRef="MyAgent.name"/>
+							</EXPRESSION>
+							<EXPRESSION>
+								<OPERAND type="O" objType="variable" objRef="nm"/>
+							</EXPRESSION>
+						</VALUECOMPARISON>
+					</CONDITION>
+				</PRECONDITION>
+			</WHEN>
+			<WF_DO>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="==================================" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="This is a test model for testing" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="the Brahms environment." valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="The output should be the agent&apos;s" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="belief about its name:" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="printBelief(MConcept;YY)">
+					<PARAMVALS>
+						<PARAMVAL value="current" valueType="Current"/>
+						<PARAMVAL value="name" valueType="symbol"/>
+						<PARAMVAL value="attribute" valueType="symbol"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="==================================" valueType="string"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+			</WF_DO>
+		</WORKFRAME>
+	</WORKFRAMES>
+</AGENT>

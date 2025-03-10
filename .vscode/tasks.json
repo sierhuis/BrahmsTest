@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Brahms",
+            "type": "shell",
+            "command": "./build-model.sh", // Replace with the actual path to your script
+            "options": {
+                "env": {
+                    "BRAHMS_HOME": "/Users/sierhum/Applications/AgentEnvironment",
+                }
+            },
+            "args": ["${file}"], //add arguments here
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+
+        {
+            "label": "Run Brahms",
+            "type": "shell",
+            "command": "./run-model-osx.sh", // Replace with the actual path to your script
+            "options": {
+                "env": {
+                    "BRAHMS_HOME": "/Users/sierhum/Applications/AgentEnvironment",
+                }
+            },
+            "args": ["${file}"], //add arguments here
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
