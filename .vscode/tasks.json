@@ -7,7 +7,7 @@
             "command": "./build-model.sh", // Replace with the actual path to your script
             "options": {
                 "env": {
-                    "BRAHMS_HOME": "/Users/sierhum/Applications/AgentEnvironment",
+                    "BRAHMS_HOME": "/Users/sierhuis/Applications/AgentEnvironment",
                 }
             },
             "args": ["${file}"], //add arguments here
@@ -25,7 +25,7 @@
             "command": "./run-model-osx.sh", // Replace with the actual path to your script
             "options": {
                 "env": {
-                    "BRAHMS_HOME": "/Users/sierhum/Applications/AgentEnvironment",
+                    "BRAHMS_HOME": "/Users/sierhuis/Applications/AgentEnvironment",
                 }
             },
             "args": ["${file}"], //add arguments here

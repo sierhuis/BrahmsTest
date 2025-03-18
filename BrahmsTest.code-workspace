@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../../Applications/AgentEnvironment/Models/brahms"
+		},
+		{
+			"path": "../../../Applications/AgentEnvironment"
 		}
 	],
 	"settings": {}

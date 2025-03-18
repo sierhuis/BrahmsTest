@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
-<!DOCTYPE AGENT SYSTEM "file:////Users/sierhum/Applications/AgentEnvironment/DTD/agent.dtd"> 
-<!-- Generated at Sun Mar 09 20:33:07 PDT 2025 -->
+<!DOCTYPE AGENT SYSTEM "file:////Users/sierhuis/Applications/AgentEnvironment/DTD/agent.dtd"> 
+<!-- Generated at Fri Mar 14 22:53:13 PDT 2025 -->
 
 <AGENT name="MyAgent" serializable="false" display="MyAgent">
 	<MEMBEROF ref="brahms.base.BaseGroup" />
