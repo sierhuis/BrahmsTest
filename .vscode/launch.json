@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Compile and Run Brahms Model",
+            "type": "bashdb",
+            "request": "launch",
+            "program": "${BRAHMS_HOME}/bin/run-model.sh", // Path to your Brahms model file
+            "preLaunchTask": "Compile Brahms", // Task to run before launching
+            "args": ["${workspaceFolder}/${fileBasenameNoExtension}"], // Arguments to pass to the program
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "BRAHMS_HOME": "${env:BRAHMS_HOME}"
+            }
+        }
+    ]
+}

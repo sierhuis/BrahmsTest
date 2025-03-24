@@ -7,9 +7,11 @@ agent MyAgent memberof BaseGroup, SystemGroup {
     attributes:
         // The agent has no attributes.
         public string name;
+        public boolean testIf;
 
     initial_beliefs:
-        (current.name = "MyAgent");
+        (current.name = "MyTestAgent");
+        (current.testIf = true);
 
     workframes:
 
@@ -25,7 +27,8 @@ agent MyAgent memberof BaseGroup, SystemGroup {
                 println("belief about its name:");
                 println("");
                 printBelief(current, name, attribute);
+                println("");                
                 println("==================================");
-            }
-        }
-} // MyAgent
+            } //enddo
+        } //endworkframe
+} // endMyAgent

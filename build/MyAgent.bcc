@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE AGENT SYSTEM "file:////Users/sierhuis/Applications/AgentEnvironment/DTD/agent.dtd"> 
-<!-- Generated at Fri Mar 14 22:53:13 PDT 2025 -->
+<!-- Generated at Sun Mar 23 17:27:15 PDT 2025 -->
 
 <AGENT name="MyAgent" serializable="false" display="MyAgent">
 	<MEMBEROF ref="brahms.base.BaseGroup" />
 	<MEMBEROF ref="brahms.base.SystemGroup" />
 	<ATTRIBUTES>
 		<ATTRIBUTE name="MyAgent.name" display="name" scope="public" type="string"/>
+		<ATTRIBUTE name="MyAgent.testIf" display="testIf" scope="public" type="boolean"/>
 	</ATTRIBUTES>
 	<BELIEFS>
 		<BELIEF>
-			<OAV lObjRef="current" lObjType="Current" attRef="MyAgent.name" evalOp="eq" value="MyAgent" valueType="string"/>
+			<OAV lObjRef="current" lObjType="Current" attRef="MyAgent.name" evalOp="eq" value="MyTestAgent" valueType="string"/>
+		</BELIEF>
+		<BELIEF>
+			<OAV lObjRef="current" lObjType="Current" attRef="MyAgent.testIf" evalOp="eq" value="true" valueType="boolean"/>
 		</BELIEF>
 	</BELIEFS>
 	<WORKFRAMES>
@@ -68,6 +72,11 @@
 						<PARAMVAL value="current" valueType="Current"/>
 						<PARAMVAL value="name" valueType="symbol"/>
 						<PARAMVAL value="attribute" valueType="symbol"/>
+					</PARAMVALS>
+				</ACTIVITYREF>
+				<ACTIVITYREF ref="println(S)">
+					<PARAMVALS>
+						<PARAMVAL value="" valueType="string"/>
 					</PARAMVALS>
 				</ACTIVITYREF>
 				<ACTIVITYREF ref="println(S)">

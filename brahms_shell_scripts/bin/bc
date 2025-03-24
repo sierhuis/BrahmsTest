@@ -1,0 +1,16 @@
+#! /bin/sh
+
+# Brahms Setup
+#export BRAHMS_ROOT=/Users/sierhuis/Applications/AgentEnvironment
+export BRAHMS_ROOT="$BRAHMS_HOME"
+
+# Java Setup
+#export JAVA_MEMORY="-Xincgc -Xmx512m -Xss1024k -Xms32m"
+export JAVA_MEMORY="-XX:+UseG1GC -Xmx512m -Xss1024k -Xms32m"
+export BOOTCP=-Xbootclasspath/p:"$BRAHMS_ROOT/lib/jacorb/jacorb.jar":"$BRAHMS_ROOT/lib/jacorb/logkit-1.2.jar":"$BRAHMS_ROOT/lib/jacorb/avalon-framework-4.1.5.jar"
+export CP="-cp .:$BRAHMS_ROOT/config:$BRAHMS_ROOT/config/security:$BRAHMS_ROOT/deploy:$BRAHMS_ROOT/Agents"
+export EXT_JAR_DIRS=-Djava.ext.dirs="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/lib/ext":"$BRAHMS_ROOT/lib":"$BRAHMS_ROOT/lib/apache":"$BRAHMS_ROOT/lib/ci":"$BRAHMS_ROOT/lib/jacorb":"$BRAHMS_ROOT/lib/jidesoft":"$BRAHMS_ROOT/lib/mysql":"$BRAHMS_ROOT/lib/nss":"$BRAHMS_ROOT/deploy":"$BRAHMS_ROOT/Agents"
+export ORB="-Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB -Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton"
+export JAVA_PROPERTIES="$JAVA_MEMORY $BOOTCP $CP $EXT_JAR_DIRS $ORB"
+
+java $JAVA_PROPERTIES gov.nasa.arc.brahms.bc.bc $@
